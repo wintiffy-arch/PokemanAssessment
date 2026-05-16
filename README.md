@@ -1,2 +1,2 @@
-# PokemanAssessment
-Catch it!
+# PokemonAssessment
+Got to Catch it!
