@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search</title>       //title of the page
+    <style>
+        
+      CSS styles for the page
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.598);
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(132, 50, 50, 0.502);
+            margin-top: 20px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .error {
+            color: rgb(0, 136, 255);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>// HTML structure for the Pokémon search interface
+    <h1>Pokémon Search</h1>
+    <input type="text" id="pokemonName" placeholder="Enter Pokémon name">
+    <button onclick="getPokemon()">Search</button>
+    <div id="result"></div>
+    <div class="error" id="error"></div>// JavaScript function to fetch and display Pokémon data
+    <script>
+        async function getPokemon() {
+            const name = document.getElementById('pokemonName').value.trim().toLowerCase();
+            const resultDiv = document.getElementById('result');
+            const errorDiv = document.getElementById('error');
+
+            
+        if (!name) {
+            errorDiv.textContent = 'Please enter a Pokémon name.';
+                return;
+            }
+
+        try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+                if (!response.ok) {
+                    throw new Error('Pokémon not found');
+                }
+                const data = await response.json();
+
+                // Create card
+                resultDiv.innerHTML = `
+                    <div class="card">
+                        <h2>${data.name.toUpperCase()}</h2>
+                        <img src="${data.sprites.front_default}" alt="${data.name}">
+                        <p><strong>Height:</strong> ${data.height}</p>
+                        <p><strong>Weight:</strong> ${data.weight}</p>
+                        <p><strong>Type:</strong> ${data.types.map(t => t.type.name).join(', ')}</p>
+                    </div> 
+                `;
+            } catch (err) {
+                errorDiv.textContent = err.message;
+            }
+        }
+    </script>
+
+</body>
+</html>
