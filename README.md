@@ -1,2 +1,2 @@
 # PokemonAssessment
-Got to Catch it!
+C'mon Guess & Compare!!
