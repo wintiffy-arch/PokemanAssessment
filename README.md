@@ -1,2 +1,1 @@
-# PokemonAssessment
-C'mon Guess & Compare!!
+# PF_PokemonAssessment
