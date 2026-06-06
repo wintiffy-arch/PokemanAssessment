@@ -57,7 +57,7 @@ This layout formats current high-level meta configurations alongside your defaul
 ## Design Process
 The intention of this app was to a create a dashboard workspace showcasing asynchronous states, telemetry metrics, and logical timeline tree. To achieve this, design and ideas forming were ideas from goggle, Pokémon API which eventually contributes to the making of the design.
 
-Figma https://www.figma.com/board/ZWFdD70GEUcG5I6qS1OECb/PF_PokemonAssesment?node-id=0-1&t=Ic4eCGM2Zb7ttBpe-1
+Figma https://www.figma.com/board/ZWFdD70GEUcG5I6qS1OECb/PF_PokemonAssesment?node-id=0-1&t=1xA9gMzjwLcuNFPg-1
 Figma image: https://dribbble.com/search/pokemon
 
 ## Features
